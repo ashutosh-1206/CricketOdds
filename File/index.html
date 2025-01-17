@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBL Live Scores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar with Website Name and Dark Mode Button -->
+    <div class="top-bar">
+        <div class="website-name">CricScore.in</div>
+        <button id="darkModeBtn" class="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+
+    <div class="container">
+        <!-- Ongoing and Upcoming Matches in a single row -->
+        <div class="matches-container">
+            <div class="panel ongoing-matches">
+                <h2>Ongoing Matches</h2>
+                <div id="ongoingMatchesList">Team Melbourne vs Team Sydney</div>
+            </div>
+
+            <div class="panel upcoming-matches">
+                <h2>Upcoming Matches</h2>
+                <div id="upcomingMatchesList">Team Brisbane vs Team Adelaide</div>
+            </div>
+        </div>
+
+        <!-- Live Match Overview and Trading Values below -->
+        <div class="panel match-overview">
+            <h1>BBL Live Match</h1>
+            <div id="teamNames">Team Melbourne vs Team Sydney</div>
+            <div id="matchStatus">Team Sydney Won the toss and elected to field first.</div>
+            <div id="liveScores">Team Melbourne - 137/3(15 overs)</div>
+        </div>
+
+        <div class="panel trading-values">
+            <h2>Live Trading Values</h2>
+            <div id="teamOdds">Loading...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
