@@ -1,20 +1,20 @@
-// Dark Mode Toggle Functionality
+//Functionality for Dark Mode Toggle 
 const darkModeBtn = document.getElementById('darkModeBtn');
 
-// Check if dark mode is enabled in local storage
+//To Check if the dark mode is enabled in local storage.
 const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
 if (isDarkMode) {
     document.body.classList.add('dark-mode');
 }
 
-// Dark Mode Button Click Event
+//Click Event
 darkModeBtn.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark-mode');
     localStorage.setItem('darkMode', isDark);
 });
 
-// Fetch Ongoing Matches from the API
+//For Fetching the Ongoing Matches from API.
 async function fetchOngoingMatches() {
     try {
         const response = await fetch('/api/ongoing-matches'); // Replace with your actual API endpoint
@@ -25,7 +25,6 @@ async function fetchOngoingMatches() {
     }
 }
 
-// Fetch Upcoming Matches from the API
 async function fetchUpcomingMatches() {
     try {
         const response = await fetch('/api/upcoming-matches'); // Replace with your actual API endpoint
@@ -36,7 +35,7 @@ async function fetchUpcomingMatches() {
     }
 }
 
-// Fetch Live Scores from the API
+//Live Scores from API.
 async function fetchLiveScores() {
     try {
         const response = await fetch('/api/live-scores'); // Replace with your actual API endpoint
@@ -47,7 +46,7 @@ async function fetchLiveScores() {
     }
 }
 
-// Fetch Trading Odds from the API
+//Trading Odd from API.
 async function fetchTradingOdds() {
     try {
         const response = await fetch('/api/odds'); // Replace with your actual API endpoint
@@ -58,7 +57,6 @@ async function fetchTradingOdds() {
     }
 }
 
-// Function to Update Ongoing Matches
 function updateOngoingMatches(matches) {
     const ongoingMatchesList = document.getElementById('ongoingMatchesList');
     ongoingMatchesList.innerHTML = '';
@@ -75,7 +73,6 @@ function updateOngoingMatches(matches) {
     });
 }
 
-// Function to Update Upcoming Matches
 function updateUpcomingMatches(matches) {
     const upcomingMatchesList = document.getElementById('upcomingMatchesList');
     upcomingMatchesList.innerHTML = '';
@@ -91,7 +88,7 @@ function updateUpcomingMatches(matches) {
     });
 }
 
-// Function to Update Live Scores
+//Live Scores Update.
 function updateLiveScores(scores) {
     const liveScores = document.getElementById('liveScores');
     liveScores.innerHTML = `
@@ -100,7 +97,7 @@ function updateLiveScores(scores) {
     `;
 }
 
-// Function to Update Trading Odds
+//Trading Odds Update.
 function updateTradingOdds(oddsData) {
     const oddsInfo = `
         <p><strong>${oddsData.team1}</strong> - Odds: ${oddsData.odds[oddsData.team1]}</p>
@@ -109,7 +106,7 @@ function updateTradingOdds(oddsData) {
     document.getElementById('teamOdds').innerHTML = oddsInfo;
 }
 
-// Function to Initialize API Calls on Page Load
+//Initializing API Calls on Page Load.
 window.addEventListener("load", () => {
     fetchOngoingMatches();  // Fetch ongoing matches data
     fetchUpcomingMatches();  // Fetch upcoming matches data
